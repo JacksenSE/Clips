@@ -42,7 +42,7 @@ function Misc() {
           <div key={video.filename}>
             <video src={`http://localhost:4005/api/videos/${video.filename}`} controls></video>
           </div>
-        ))}
+        ))} 
       </div>
     </>
   );
