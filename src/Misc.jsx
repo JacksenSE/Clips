@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/nav';
+import Nav from './components/nav';
 
-function League() {
+function Misc() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -27,27 +27,25 @@ function League() {
     fetchVideos();
   }, []);
 
-  const filteredVideos = videos.filter(video => video.category === 'category1');
+  const filteredVideos = videos.filter(video => video.category === 'category4');
 
   return (
     <>
       <Nav />
 
-      <div className="LeagueB">
-        <img src="LeagueHead.svg" alt="League Header" />
+      <div className="MiscB">
+        <img src="MiscHead.svg" alt="Misc Header" />
       </div>
 
-      <div className="LeagueH">
+      <div className="MiscH">
         {filteredVideos.map((video) => (
-          <div key={video.filename} className="card">
+          <div key={video.filename}>
             <video src={`http://localhost:4005/api/videos/${video.filename}`} controls></video>
-            <h3 className="card-title">{video.title}</h3>
-            <p className="card-text">{video.author}</p>
           </div>
-        ))}
+        ))} 
       </div>
     </>
   );
 }
 
-export default League;
+export default Misc;
