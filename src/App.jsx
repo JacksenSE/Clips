@@ -12,12 +12,12 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='/League' element={<League/>}/>
-    <Route path='/Overwatch' element={<Overwatch/>}/>
-    <Route path='/Valorant' element={<Valorant/>}/>
-    <Route path='/Misc' element={<Misc/>}/>
-    <Route path='/Upload' element={<Upload/>}/>
+    <Route path='/' component={<Home/>}/>
+    <Route path='/League' component={<League/>}/>
+    <Route path='/Overwatch' component={<Overwatch/>}/>
+    <Route path='/Valorant' component={<Valorant/>}/>
+    <Route path='/Misc' component={<Misc/>}/>
+    <Route path='/Upload' component={<Upload/>}/>
     </Routes>
     </BrowserRouter>
   )
