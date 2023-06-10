@@ -1,6 +1,4 @@
-*{
-  background-color: rgb(63, 41, 41);
-}
+
 
 .Nav ul{
   background-color: rgb(190, 153, 153);
@@ -14,51 +12,123 @@
   display: block;
   color: #000000;
   font-weight:bold;
-  padding: 1.5em 2em;
+  padding: 1.5em 3em;
   text-decoration: none;
   float: left;
-  left: 29em;
+  left: 20em;
+ font-size: 1.5em;
 }
+
+.Nav li .Home {
+  background-color: #000000;
+  color:#ffffff;
+}.Nav li .Home:hover {
+  background-color: #ffffff;
+  color:#000000;
+  }
+
+.Nav li .League {
+background-color: #0A1428;
+color: #937132;
+}
+
+.Nav li .League:hover {
+  background-color: #937132;
+  color: #0A1428;
+  }
+  .LeagueB{
+   position: relative;
+   right: 36em;
+   top: 2em;
+   z-index: -1;
+    
+    }
+    
+.Nav li .Overwatch {
+  background-color: #4A4C4E;
+  color: #FA9C1D;
+  }
+  .OverwatchB{
+    position: relative;
+    right: 21em;
+    top: 2em;
+    z-index: -1;
+  }
+  .Nav li .Overwatch:hover {
+    background-color: #FA9C1D;
+    color: #4A4C4E;
+  }
+
+.Nav li .Valorant {
+background-color: #0c1824;
+color: #ff5152;
+}
+.ValorantB{
+  position: relative;
+  right: 5.77em;
+  top: 2em;
+  z-index: -1;
+}
+.Nav li .Valorant:hover {
+  background-color: #ff5152;
+  color: #0c1824; 
+   }
+.Nav li .Misc {
+background-color: #000000;
+color: #ffffff;
+}
+
+.Nav li .Misc:hover {
+  background-color: #ffffff;
+  color: #000000;
+  }
 
 .Nav a {
 font-size: 1.5em;
 }
 
-.Nav li a:hover {
-  background-color: rgb(184, 88, 10);
-  color: rgb(255, 255, 255);
-}
 
 .F-contain {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+ 
 }
 
 .upload-form {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 500px;
   padding: 20px;
   background-color: #f2f2f2;
-  border-radius: 8px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .form-group {
   margin-bottom: 20px;
+  background-color: white;
 }
 
 .form-label {
-  font-size: 16px;
+  font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 8px;
+  background-color: white;
 }
 
 .form-input {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+ font-size: 1em;
+}
+.form-input option{
+ background-color: white;
+ font-size: 1em;
+ 
 }
 
 .upload-button {
@@ -94,4 +164,268 @@ font-size: 1.5em;
     background-color: #45a049;
   }
 
+  .LeagueH {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .LeagueH .card {
+    display: flex;
+    flex-direction: column;
+    background-color: #0A323C;
+    border-radius: 5px;
+    padding: 15px;
+    width: 50em;
+    height: 30em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .LeagueH .card-title {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    top:  -1em;
+    color: #cfc9c9;
+  
+  }
+  
+  .LeagueH .card-text {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    color: #cfc9c9;
+    text-align: right;
+    bottom:  4.2em;
+  }
+  
+  .LeagueH video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    
+  }  
+  
+  .OverwatchH {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .OverwatchH .card {
+    display: flex;
+    flex-direction: column;
+    background-color: #a05c03;
+    border-radius: 5px;
+    padding: 15px;
+    width: 50em;
+    height: 30em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .OverwatchH .card-title {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    top:  -1em;
+    color: #cfc9c9;
+  
+  }
+  
+  .OverwatchH .card-text {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    color: #cfc9c9;
+    text-align: right;
+    bottom:  4.2em;
+  }
+  
+  .OverwatchH video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  } 
+  
+  .ValorantH {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .ValorantH .card {
+    display: flex;
+    flex-direction: column;
+    background-color: #7a0404;
+    border-radius: 5px;
+    padding: 15px;
+    width: 50em;
+    height: 30em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .ValorantH .card-title {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    top:  -1em;
+    color: #cfc9c9;
+  
+  }
+  
+  .ValorantH .card-text {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    color: #cfc9c9;
+    text-align: right;
+    bottom:  4.2em;
+  }
+  
+  .ValorantH video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    
+  }  
 
+  @media (max-width: 1920px) and (max-height: 969px) {
+
+    .LeagueH {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .LeagueH .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #0A323C;
+      border-radius: 5px;
+      padding: 15px;
+      width: 35em;
+      height: 2em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      
+    }
+    
+    .LeagueH .card-title {
+      position: relative;
+      font-size: 2em;
+      font-weight: bold;
+      top:  -1em;
+      color: #cfc9c9;
+    
+    }
+    
+    .LeagueH .card-text {
+      position: relative;
+      font-size: 2em;
+      font-weight: bold;
+      color: #cfc9c9;
+      text-align: right;
+      bottom:  4.2em;
+    }
+    
+    .LeagueH video {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      
+    }  
+    
+    .OverwatchH {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .OverwatchH .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #a05c03;
+      border-radius: 5px;
+      padding: 15px;
+      width: 50em;
+      height: 30em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      
+    }
+    
+    .OverwatchH .card-title {
+      position: relative;
+      font-size: 2em;
+      font-weight: bold;
+      top:  -1em;
+      color: #cfc9c9;
+    
+    }
+    
+    .OverwatchH .card-text {
+      position: relative;
+      font-size: 2em;
+      font-weight: bold;
+      color: #cfc9c9;
+      text-align: right;
+      bottom:  4.2em;
+    }
+    
+    .OverwatchH video {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    } 
+    
+    .ValorantH {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .ValorantH .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #7a0404;
+      border-radius: 5px;
+      padding: 15px;
+      width: 50em;
+      height: 30em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      
+    }
+    
+    .ValorantH .card-title {
+      position: relative;
+      font-size: 2em;
+      font-weight: bold;
+      top:  -1em;
+      color: #cfc9c9;
+    
+    }
+    
+    .ValorantH .card-text {
+      position: relative;
+      font-size: 2em;
+      font-weight: bold;
+      color: #cfc9c9;
+      text-align: right;
+      bottom:  4.2em;
+    }
+    
+    .ValorantH video {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      
+    }  
+
+  }
