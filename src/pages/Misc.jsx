@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Nav from './components/nav';
+import Nav from '../components/nav';
 
-function Overwatch() {
+function Misc() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    document.body.style.backgroundColor = "#4A4C4E";
+    document.body.style.backgroundColor = "#0A1428";
     return () => {
-      document.body.style.backgroundColor = "#4A4C4E";
+      document.body.style.backgroundColor = "#0A1428";
     };
   }, []);
 
@@ -27,17 +27,17 @@ function Overwatch() {
     fetchVideos();
   }, []);
 
-  const filteredVideos = videos.filter(video => video.category === 'category2');
+  const filteredVideos = videos.filter(video => video.category === 'category4');
 
   return (
     <>
       <Nav />
 
-      <div className="OverwatchB">
-        <img src="OverwatchHead.svg" alt="Overwatch Header" />
+      <div className="MiscB">
+        <img src="ValorantHead.svg" alt="Misc Header" />
       </div>
 
-      <div className="OverwatchH">
+      <div className="MiscH">
         {filteredVideos.map((video) => (
           <div key={video.filename} className="card">
             <video src={`http://localhost:4005/api/videos/${video.filename}`} controls></video>
@@ -50,4 +50,4 @@ function Overwatch() {
   );
 }
 
-export default Overwatch;
+export default Misc;

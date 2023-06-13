@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Nav from './components/nav';
+import Nav from '../components/nav';
 
-function League() {
+function Overwatch() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    document.body.style.backgroundColor = "#0A1428";
+    document.body.style.backgroundColor = "#4A4C4E";
     return () => {
-      document.body.style.backgroundColor = "#0A1428";
+      document.body.style.backgroundColor = "#4A4C4E";
     };
   }, []);
 
@@ -27,17 +27,17 @@ function League() {
     fetchVideos();
   }, []);
 
-  const filteredVideos = videos.filter(video => video.category === 'category1');
+  const filteredVideos = videos.filter(video => video.category === 'category2');
 
   return (
     <>
       <Nav />
 
-      <div className="LeagueB">
-        <img src="LeagueHead.svg" alt="League Header" />
+      <div className="OverwatchB">
+        <img src="OverwatchHead.svg" alt="Overwatch Header" />
       </div>
 
-      <div className="LeagueH">
+      <div className="OverwatchH">
         {filteredVideos.map((video) => (
           <div key={video.filename} className="card">
             <video src={`http://localhost:4005/api/videos/${video.filename}`} controls></video>
@@ -50,4 +50,4 @@ function League() {
   );
 }
 
-export default League;
+export default Overwatch;

@@ -7,6 +7,7 @@ const CDNURL = "http://localhost:4005/api/videos/";
 function Upload() {
   const [videos, setVideos] = useState([]);
 
+
   async function getVideos() {
     try {
       const response = await fetch('http://localhost:4005/api/videos');
@@ -47,7 +48,7 @@ function Upload() {
   }
 
   return (
-    <Container className='mt-5' style={{ width: "700px" }}>
+    <Container className='mt-5' style={{ width: "700px", backgroundColor: "white" }}>
       <h1>Video Upload</h1>
       <Form className="upload-form">
         <div className="form-group">
@@ -88,6 +89,7 @@ function Upload() {
       </Row>
     </Container>
   );
+  
 }
 
 export default Upload;
