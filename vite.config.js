@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:4005',
+        target: 'http://cfc555.ddns.net:74/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
