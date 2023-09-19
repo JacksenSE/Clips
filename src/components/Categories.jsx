@@ -4,7 +4,7 @@ import valorantImage from '../assets/valorantImage.jpg';
 import leagueImage from '../assets/leagueImage.jpg';
 import battleBitImage from '../assets/battleBitImage1.jpg'
 import rainbowImage from '../assets/rainbowImage.jpg'
-import Misc from '../assets/misc.png'
+
 import apexImage from '../assets/apexImage.jpg'
 import counterStrike2Image from '../assets/counterStrike2.jpg'
 
