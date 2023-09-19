@@ -1,23 +1,19 @@
 import Nav from "./nav";
 import React, { useEffect } from 'react';
-
+import Categories from "./Categories";
 function Home() {
   useEffect(() => {
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "darkbrown";
     return () => {
-      document.body.style.backgroundColor = "black";
+      document.body.style.backgroundColor = "darkbrown";
     };
   }, []);
 
   return (
     <>
+    <Categories/>
       <Nav className="centered-nav" />
-      <div className="HomeH">
-        <h1>Zentra Clips</h1>
-      </div>
-      <div className="HomeP">
-        <p>Clips from some of the best gamers on the planet.</p>
-      </div>
+    
     </>
   );
 }

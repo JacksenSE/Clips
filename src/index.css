@@ -1,60 +1,46 @@
 
-.BackL button{
-  position: relative;
-    background-color: #4CAF50;
-    color: white;
-     text-align: center;
-    padding: 1em 2em;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    top: -13em;
-    right: 0.5em;
 
-  }
+.Video-Container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax width */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Center-align the grid content */
+}
+.card {
 
-  .centered-nav {
-    display: flex;
-    justify-content: center;
-   
-  }
-  
-  .HomeH {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-  
-  .HomeP {
-    text-align: center;
-    font-size: 4em;
-    color: white;
-    margin-top: 0;
-  }
-  
-  .HomeH {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-  
-  .HomeH h1 {
-    position: relative;
-    font-size: 10em;
-    right: 3em;
-    color: white;
-    margin: 0;
-    top: 2em;
-  }
-  
-  .HomeP {
-    position: relative;
-    text-align: center;
-    font-size: 4em;
-    color: white;
-    margin-top: 0;
-    top: 4em;
-  }
-  
+  padding: 20px;
+  text-align: center;
+
+}
+
+
+.card video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover; /* Ensure videos fill the container */
+}
+
+.card-title {
+  font-size: 1.5rem; /* Slightly smaller font size */
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ffffff; /* Dark text color */
+  text-transform: none; /* Remove uppercase */
+  font-family: 'Oxygen', sans-serif; /* Use a custom font or web-safe font */
+  text-shadow: none; /* Remove text shadow */
+}
+
+.card-text {
+  font-size: 1rem; /* Smaller font size */
+  color: #777; /* Lighter text color */
+  background-color: transparent; /* Transparent background */
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Oxygen', sans-serif;
+  text-shadow: none; /* Remove text shadow */
+}
+
+/* Navigation Bar Styles */
+/* Add your navigation bar styles here */

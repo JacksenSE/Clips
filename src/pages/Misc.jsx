@@ -5,9 +5,10 @@ function Misc() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    document.body.style.backgroundColor = "#0A1428";
+    const previousBackgroundColor = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = "#000000";
     return () => {
-      document.body.style.backgroundColor = "#0A1428";
+      document.body.style.backgroundColor = previousBackgroundColor;
     };
   }, []);
 
@@ -15,7 +16,7 @@ function Misc() {
     // Fetch the video data from the server
     async function fetchVideos() {
       try {
-        const response = await fetch('http://localhost:4005/api/videos');
+        const response = await fetch('http://cfc555.ddns.net:74/api/videos');
         const data = await response.json();
         setVideos(data);
       } catch (error) {
@@ -27,20 +28,17 @@ function Misc() {
     fetchVideos();
   }, []);
 
-  const filteredVideos = videos.filter(video => video.category === 'category4');
+  const filteredVideos = videos.filter(video => video.category === 'category8');
 
   return (
     <>
       <Nav />
 
-      <div className="MiscB">
-        <img src="ValorantHead.svg" alt="Misc Header" />
-      </div>
 
-      <div className="MiscH">
+      <div className="Video-Container">
         {filteredVideos.map((video) => (
           <div key={video.filename} className="card">
-            <video src={`http://localhost:4005/api/videos/${video.filename}`} controls></video>
+            <video src={`http://cfc555.ddns.net:74/api/videos/${video.filename}`} controls></video>
             <h3 className="card-title">{video.title}</h3>
             <p className="card-text">{video.author}</p>
           </div>

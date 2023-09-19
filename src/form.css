@@ -1,0 +1,75 @@
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* This will make the container take the full viewport height */
+    width: 100%; /* This will make the container expand to the full width of the viewport */
+  }
+  
+  .upload-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 500px; /* Adjust the width as needed */
+  }
+  .Video-Title {
+    position: relative;
+    bottom: 10em;
+    left: 11em;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  .form-input {
+    width: 100%;
+    padding: 6px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add some margin at the bottom to separate input fields */
+  }
+  
+  .select-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .custom-file-upload {
+    display: inline-block;
+    padding: 8px 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+  }
+  
+  .custom-file-upload input[type="file"] {
+    display: none;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,521 +1,144 @@
+body{
+  background-color: #302e2c;
+  font-family: 'Oxygen', sans-serif
 
-
-.Nav ul{
-  background-color: rgb(190, 153, 153);
+}
+.CatList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Adjust the gap between items */
   list-style-type: none;
-  margin: 0;
+  margin-top: 45px; /* Add margin to the top to push the grid down */
   padding: 0;
 }
 
-.Nav li a {
-  position: relative;
-  display: block;
-  color: #000000;
-  font-weight:bold;
-  padding: 1.5em 3em;
+
+.CatList li {
+  text-align: center;
+
+}
+
+.CategoryLink {
   text-decoration: none;
-  float: left;
-  left: 20em;
- font-size: 1.5em;
+  color: #000;
+  transition: transform 0.2s; /* Add a smooth transform effect on hover */
+  display: block;
+  border: 2px solid #ffffff; /* Add a subtle border to each category */
+  border-radius: 5px;
+  overflow: hidden; /* Ensure images don't overflow the borders */
 }
 
-.Nav li .Home {
-  background-color: #000000;
-  color:#ffffff;
-}.Nav li .Home:hover {
-  background-color: #ffffff;
-  color:#000000;
-  }
-
-.Nav li .League {
-background-color: #0A1428;
-color: #937132;
+.CategoryLink:hover {
+  transform: translateY(-5px); /* Move the category up slightly on hover */
 }
 
-.Nav li .League:hover {
-  background-color: #937132;
-  color: #0A1428;
-  }
-  .LeagueB{
-   position: relative;
-   right: 36em;
-   top: 2em;
-   z-index: -1;
-    
-    }
-    
-.Nav li .Overwatch {
-  background-color: #4A4C4E;
+/* Define a hover effect for the League category */
+.LeagueCategory:hover {
+  /* Add your hover styles here */
+  background-color: #dfc070; /* Example background color */
+  color: #c2c3be; /* Example text color */
+}
+
+/* Repeat the same pattern for other categories as needed */
+.Overwatch2Category:hover {
+  /* Hover styles for the Overwatch category */
+  background-color: #7483ae;
   color: #FA9C1D;
-  }
-  .OverwatchB{
-    position: relative;
-    right: 21em;
-    top: 2em;
-    z-index: -1;
-  }
-  .Nav li .Overwatch:hover {
-    background-color: #FA9C1D;
-    color: #4A4C4E;
-  }
-
-.Nav li .Valorant {
-background-color: #0c1824;
-color: #ff5152;
-}
-.ValorantB{
-  position: relative;
-  right: 5.77em;
-  top: 2em;
-  z-index: -1;
-}
-.Nav li .Valorant:hover {
-  background-color: #ff5152;
-  color: #0c1824; 
-   }
-.Nav li .Misc {
-background-color: #000000;
-color: #ffffff;
 }
 
-.Nav li .Misc:hover {
-  background-color: #ffffff;
+.ValorantCategory:hover {
+  /* Hover styles for the Valorant category */
+  background-color: #fcbf6f;
+  color: #7c6367;
+}
+.Rainbow6SiegeCategory:hover {
+  /* Hover styles for the Valorant category */
+  background-color:#BFBA9F;
+  color: #8C8581;
+}
+.ApexLegendsCategory:hover {
+  /* Hover styles for the Valorant category */
+  background-color:#A4373D;
+  color: #3A401A;
+}
+
+.BattleBitRemasteredCategory:hover {
+  /* Hover styles for the Valorant category */
+  background-color:#1c2125;
+  color: #c8603b;
+}
+.CounterStrike2Category:hover {
+  /* Hover styles for the Valorant category */
+  background-color:#e28d2c;
+  color: #402113;
+}
+.MiscCategory:hover {
+  /* Hover styles for the Valorant category */
+  background-color:#000000;
   color: #000000;
-  }
+}
+/* Add hover styles for other categories as needed */
 
-.Nav a {
-font-size: 1.5em;
+.Category {
+  padding: 10px;
 }
 
-
-.F-contain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
- 
-}
-
-.upload-form {
+.CategoryContent {
   display: flex;
   flex-direction: column;
-  width: 500px;
-  padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.form-group {
-  margin-bottom: 20px;
-  background-color: white;
-}
-
-.form-label {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 8px;
-  background-color: white;
-}
-
-.form-input {
+  justify-content: center;
+  align-items: center;
   padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  background-color: white;
- font-size: 1em;
-}
-.form-input option{
- background-color: white;
- font-size: 1em;
- 
 }
 
-.upload-button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
+.Category img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
 }
 
-.upload-button:hover {
-  background-color: #45a049;
+.Category p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #ffffff; /* Add a background color to <p> */
+  border-top: 1px solid #e0e0e0; /* Add a subtle border to separate text and image */
 }
 
 
-  .Back button{
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-  }
+.Nav {
+  background-color: #333; /* Background color for the navigation bar */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Add padding for spacing */
+  position: fixed; /* Fixed position to keep it at the top */
+  top: 0; /* Position at the top of the viewport */
+  left: 0; /* Position at the left edge */
+  right: 0; /* Position at the right edge */
+  z-index: 1000; /* Ensure it's on top of other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+}
 
-  .Back:hover {
-    background-color: #45a049;
-  }
+.NavList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox to horizontally align the navigation items */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Center items vertically */
+}
 
-  .LeagueH {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .LeagueH .card {
-    display: flex;
-    flex-direction: column;
-    background-color: #0A323C;
-    border-radius: 5px;
-    padding: 15px;
-    width: 50em;
-    height: 30em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-  } 
-  
-  .LeagueH .card-title {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    top:  -1em;
-    color: #cfc9c9;
-  
-  }
-  
-  .LeagueH .card-text {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    color: #cfc9c9;
-    text-align: right;
-    bottom:  4.2em;
-  }
-  
-  .LeagueH video {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    
-  }  
-  
-  .OverwatchH {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .OverwatchH .card {
-    display: flex;
-    flex-direction: column;
-    background-color: #a05c03;
-    border-radius: 5px;
-    padding: 15px;
-    width: 50em;
-    height: 30em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  .OverwatchH .card-title {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    top:  -1em;
-    color: #cfc9c9;
-  
-  }
-  
-  .OverwatchH .card-text {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    color: #cfc9c9;
-    text-align: right;
-    bottom:  4.2em;
-  }
-  
-  .OverwatchH video {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-  } 
-  
-  .ValorantH {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .ValorantH .card {
-    display: flex;
-    flex-direction: column;
-    background-color: #7a0404;
-    border-radius: 5px;
-    padding: 15px;
-    width: 50em;
-    height: 30em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  .ValorantH .card-title {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    top:  -1em;
-    color: #cfc9c9;
-  
-  }
-  
-  .ValorantH .card-text {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    color: #cfc9c9;
-    text-align: right;
-    bottom:  4.2em;
-  }
-  
-  .ValorantH video {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-  }
+.NavList li {
+  margin-right: 20px; /* Add margin between navigation items */
+}
 
-  .MiscH {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .MiscH .card {
-    display: flex;
-    flex-direction: column;
-    background-color: #0A323C;
-    border-radius: 5px;
-    padding: 15px;
-    width: 50em;
-    height: 30em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-  } 
-  
-  .MiscH .card-title {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    top:  -1em;
-    color: #cfc9c9;
-  
-  }
-  
-  .MiscH .card-text {
-    position: relative;
-    font-size: 2em;
-    font-weight: bold;
-    color: #cfc9c9;
-    text-align: right;
-    bottom:  4.2em;
-  }
-  
-  .MiscH video {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    
-  }  
-    
-  
+.NavList a {
+  text-decoration: none;
+  color: #fff; /* Text color for navigation links */
+  font-weight: bold; /* Bold text */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
 
-  @media (max-width: 1920px) and (max-height: 969px) {
-
-    .LeagueH {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    
-    .LeagueH .card {
-      display: flex;
-      flex-direction: column;
-      background-color: #0A323C;
-      border-radius: 5px;
-      padding: 15px;
-      width: 35em;
-      height: 21em;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      
-    }
-    
-    .LeagueH .card-title {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      top:  -1em;
-      color: #cfc9c9;
-    
-    }
-    
-    .LeagueH .card-text {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      color: #cfc9c9;
-      text-align: right;
-      bottom:  4.2em;
-    }
-    
-    .LeagueH video {
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      
-    }  
-    
-    .OverwatchH {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    
-    .OverwatchH .card {
-      display: flex;
-      flex-direction: column;
-      background-color: #a05c03;
-      border-radius: 5px;
-      padding: 15px;
-      width: 50em;
-      height: 30em;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      
-    }
-    
-    .OverwatchH .card-title {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      top:  -1em;
-      color: #cfc9c9;
-    
-    }
-    
-    .OverwatchH .card-text {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      color: #cfc9c9;
-      text-align: right;
-      bottom:  4.2em;
-    }
-    
-    .OverwatchH video {
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-    } 
-    
-    .ValorantH {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    
-    .ValorantH .card {
-      display: flex;
-      flex-direction: column;
-      background-color: #7a0404;
-      border-radius: 5px;
-      padding: 15px;
-      width: 50em;
-      height: 30em;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      
-    }
-    
-    .ValorantH .card-title {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      top:  -1em;
-      color: #cfc9c9;
-    
-    }
-    
-    .ValorantH .card-text {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      color: #cfc9c9;
-      text-align: right;
-      bottom:  4.2em;
-    }
-    
-    .ValorantH video {
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      
-    }  
-
-    .MiscH {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    
-    .MiscH .card {
-      display: flex;
-      flex-direction: column;
-      background-color: #7a0404;
-      border-radius: 5px;
-      padding: 15px;
-      width: 50em;
-      height: 30em;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      
-    }
-    
-    .MiscH .card-title {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      top:  -1em;
-      color: #cfc9c9;
-    
-    }
-    
-    .MiscH .card-text {
-      position: relative;
-      font-size: 2em;
-      font-weight: bold;
-      color: #cfc9c9;
-      text-align: right;
-      bottom:  4.2em;
-    }
-    
-    .MiscH video {
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      
-    }  
-
-  }
-  
+.NavList a:hover {
+  color: #ffcc00; /* Change text color on hover */
+}

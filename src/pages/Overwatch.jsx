@@ -5,9 +5,10 @@ function Overwatch() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    document.body.style.backgroundColor = "#4A4C4E";
+    const previousBackgroundColor = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = "#7483ae";
     return () => {
-      document.body.style.backgroundColor = "#4A4C4E";
+      document.body.style.backgroundColor = previousBackgroundColor;
     };
   }, []);
 
@@ -15,7 +16,7 @@ function Overwatch() {
     // Fetch the video data from the server
     async function fetchVideos() {
       try {
-        const response = await fetch('http://localhost:4005/api/videos');
+        const response = await fetch('http://cfc555.ddns.net:74/api/videos');
         const data = await response.json();
         setVideos(data);
       } catch (error) {
@@ -33,14 +34,12 @@ function Overwatch() {
     <>
       <Nav />
 
-      <div className="OverwatchB">
-        <img src="OverwatchHead.svg" alt="Overwatch Header" />
-      </div>
+     
 
-      <div className="OverwatchH">
+      <div className="Video-Container">
         {filteredVideos.map((video) => (
           <div key={video.filename} className="card">
-            <video src={`http://localhost:4005/api/videos/${video.filename}`} controls></video>
+            <video src={`http://cfc555.ddns.net:74/api/videos/${video.filename}`} controls></video>
             <h3 className="card-title">{video.title}</h3>
             <p className="card-text">{video.author}</p>
           </div>

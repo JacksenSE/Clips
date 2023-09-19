@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Nav from '../components/nav';
 
-function Valorant() {
+function ApexLegends() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     const previousBackgroundColor = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#e59769";
+    document.body.style.backgroundColor = "#A4373D";
     return () => {
       document.body.style.backgroundColor = previousBackgroundColor;
     };
   }, []);
-
+  
 
   useEffect(() => {
     // Fetch the video data from the server
@@ -29,16 +29,17 @@ function Valorant() {
     fetchVideos();
   }, []);
 
-  const filteredVideos = videos.filter(video => video.category === 'category3');
+  const filteredVideos = videos.filter(video => video.category === 'category6');
 
   return (
     <>
       <Nav />
 
+
       <div className="Video-Container">
         {filteredVideos.map((video) => (
           <div key={video.filename} className="card">
-            <video src={`http://cfc555.ddns.net:74api/videos/${video.filename}`} controls></video>
+            <video src={`http://cfc555.ddns.net:74/api/videos/${video.filename}`} controls></video>
             <h3 className="card-title">{video.title}</h3>
             <p className="card-text">{video.author}</p>
           </div>
@@ -48,4 +49,4 @@ function Valorant() {
   );
 }
 
-export default Valorant;
+export default ApexLegends;
