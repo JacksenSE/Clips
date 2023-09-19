@@ -39,7 +39,7 @@ function Upload() {
       formData.append('author', author);
       formData.append('category', category);
 
-      const response = await fetch('http://cfc555.ddns.net:74/api/videos', {
+      const response = await fetch('https://cfc555.ddns.net/api/videos', {
         method: 'POST',
         body: formData,
       });

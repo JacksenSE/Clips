@@ -17,7 +17,7 @@ function CounterStrike2() {
     // Fetch the video data from the server
     async function fetchVideos() {
       try {
-        const response = await fetch('http://cfc555.ddns.net:74/api/videos');
+        const response = await fetch('https://cfc555.ddns.net/api/videos');
         const data = await response.json();
         setVideos(data);
       } catch (error) {
@@ -38,7 +38,7 @@ function CounterStrike2() {
       <div className="Video-Container">
         {filteredVideos.map((video) => (
           <div key={video.filename} className="card">
-            <video src={`http://cfc555.ddns.net:74/api/videos/${video.filename}`} controls></video>
+            <video src={`https://cfc555.ddns.net/api/videos/${video.filename}`} controls></video>
             <h3 className="card-title">{video.title}</h3>
             <p className="card-text">{video.author}</p>
           </div>
