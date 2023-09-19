@@ -61,7 +61,6 @@ function Categories() {
       },
       {
         to: "/Misc",
-        imageSrc: Misc,
         alt: "Misc",
         text: "Misc",
         categoryClass: "MiscCategory",
