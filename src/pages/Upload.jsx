@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Container, Form, Row, Col, Card } from 'react-bootstrap';
 import Nav from '../components/nav';
 import { Link } from 'react-router-dom';
-const CDNURL = "http://localhost:4005/api/videos/";
+const CDNURL = "https://cfc555.ddns.net/api/videos/";
 
 function Upload() {
   const [videos, setVideos] = useState([]);
@@ -11,7 +11,7 @@ function Upload() {
 
   async function getVideos() {
     try {
-      const response = await fetch('http://localhost:4005/api/videos');
+      const response = await fetch('https://cfc555.ddns.net/api/videos');
       const data = await response.json();
 
       setVideos(data);
