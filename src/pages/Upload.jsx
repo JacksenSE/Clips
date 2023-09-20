@@ -18,8 +18,8 @@ function Upload() {
       return;
     }
 
-    if (videoFile.size > 200 * 1024 * 1024) {
-      alert("File size exceeds the maximum allowed (200MB). Please select a smaller file.");
+    if (videoFile.size > 150 * 1024 * 1024) {
+      alert("File size exceeds the maximum allowed (150MB). Please select a smaller file.");
       return; // Prevent further execution
     }
 
