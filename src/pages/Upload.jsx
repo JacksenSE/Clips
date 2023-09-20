@@ -7,7 +7,8 @@ const CDNURL = "http://localhost:4005/api/videos/";
 
 function Upload() {
   const [videos, setVideos] = useState([]);
-
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
 
   async function getVideos() {
     try {
@@ -26,6 +27,11 @@ function Upload() {
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const category = document.getElementById("category").value;
+    
+    if (!title || !author) {
+      alert("Please enter both a title and an author.");
+      return;
+    }
 
     if (videoFile.size > 200 * 1024 * 1024) {
       alert("File size exceeds the maximum allowed (200MB). Please select a smaller file.");
@@ -62,11 +68,27 @@ function Upload() {
      <Form className="upload-form">
   <div className="form-group">
     <label htmlFor="title" className="form-label">Title</label>
-    <input type="text" id="title" name="title" className="form-input" />
+    <input
+      type="text"
+      id="title"
+      name="title"
+      className="form-input"
+      placeholder='Title is required.'
+      value={title}
+      onChange={(e) => setTitle(e.target.value)}
+    />
   </div>
   <div className="form-group">
     <label htmlFor="author" className="form-label">Author</label>
-    <input type="text" id="author" name="author" className="form-input" />
+    <input
+      type="text"
+      id="author"
+      name="author"
+      className="form-input"
+      placeholder="Author is required."
+      value={author}
+      onChange={(e) => setAuthor(e.target.value)}
+    />
   </div>
   <div className="form-group">
     <label htmlFor="category" className="form-label">Category</label>
@@ -88,12 +110,12 @@ function Upload() {
       Select a Video
     </label>
   </div>
-  <Link to='/'><button className="submit-button"onClick={(e) => uploadFile(e)}>Upload</button> </Link>
+  {(!title || !author )}
+  <button className="submit-button" onClick={(e) => uploadFile(e)}>Upload</button>
 </Form>
     </Container>
     </>
   );
-  
 }
 
 export default Upload;
