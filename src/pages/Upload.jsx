@@ -28,11 +28,7 @@ function Upload() {
     const author = document.getElementById("author").value;
     const category = document.getElementById("category").value;
     
-    if (!title || !author) {
-      alert("Please enter both a title and an author.");
-      return;
-    }
-
+   
     if (videoFile.size > 200 * 1024 * 1024) {
       alert("File size exceeds the maximum allowed (200MB). Please select a smaller file.");
       return; // Prevent further execution
@@ -110,8 +106,7 @@ function Upload() {
       Select a Video
     </label>
   </div>
-  {(!title || !author )}
-  <button className="submit-button" onClick={(e) => uploadFile(e)}>Upload</button>
+ <Link to='/'><button className="submit-button" onClick={(e) => uploadFile(e)}>Upload</button></Link> 
 </Form>
     </Container>
     </>
