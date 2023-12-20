@@ -6,7 +6,7 @@ function TheFinals() {
 
   useEffect(() => {
     const previousBackgroundColor = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#d61d3d";
+    document.body.style.backgroundColor = "#7e1400";
     return () => {
       document.body.style.backgroundColor = previousBackgroundColor;
     };
