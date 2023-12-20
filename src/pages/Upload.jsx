@@ -8,12 +8,12 @@ const CDNURL = "https://cfc555.ddns.net/api/videos/";
 function Upload() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('category1'); // Default category
+  const [category, setCategory] = useState(''); // Default category
 
   async function uploadFile(e) {
     const videoFile = e.target.files[0];
 
-    if (!title || !author || category) {
+    if (!title || !author || category === '') {
       alert("Please enter both a title and an author, and select a valid category.");
       return;
     }
@@ -42,7 +42,7 @@ function Upload() {
       // Clear the form fields
       setTitle('');
       setAuthor('');
-      setCategory('category1');
+      setCategory('');
     } catch (error) {
       console.error(error);
       alert("Error uploading file to PostgreSQL");
@@ -92,7 +92,7 @@ function Upload() {
               <option value="category1">League</option>
               <option value="category2">Overwatch</option>
               <option value="category3">Valorant</option>
-              <option value="category4">BattleBit Remastered</option>
+              <option value="category4">The Finals</option>
               <option value="category5">Rainbow 6 Siege</option>
               <option value="category6">Apex Legends</option>
               <option value="category7">CounterStrike 2</option>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import overwatchImage from '../assets/overwatchImage.png';
 import valorantImage from '../assets/valorantImage.jpg';
 import leagueImage from '../assets/leagueImage.jpg';
-import battleBitImage from '../assets/battleBitImage1.jpg'
+import TheFinalsImage from '../assets/TheFinals.jpg'
 import rainbowImage from '../assets/rainbowImage.jpg'
 import misc from '../assets/misc.jpg'
 import apexImage from '../assets/apexImage.jpg'
@@ -32,11 +32,11 @@ function Categories() {
       categoryClass: "ValorantCategory",
     },
     {
-        to: "/BattleBitRemastered",
-        imageSrc: battleBitImage,
-        alt: "BattleBit",
-        text: "BattleBit Remastered",
-        categoryClass: "BattleBitRemasteredCategory",
+        to: "/TheFinals",
+        imageSrc: TheFinalsImage,
+        alt: "TheFinals",
+        text: "The Finals",
+        categoryClass: "TheFinalsCategory",
       },
       {
         to: "/Rainbow6Siege",

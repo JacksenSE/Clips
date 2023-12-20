@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Nav from '../components/nav';
 
-function BattleBitRemastered() {
+function TheFinals() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     const previousBackgroundColor = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#1c2125";
+    document.body.style.backgroundColor = "#cc5a6d";
     return () => {
       document.body.style.backgroundColor = previousBackgroundColor;
     };
@@ -49,4 +49,4 @@ function BattleBitRemastered() {
   );
 }
 
-export default BattleBitRemastered;
+export default TheFinals;
