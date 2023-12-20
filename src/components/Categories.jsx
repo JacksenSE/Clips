@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import overwatchImage from '../assets/overwatchImage.png';
 import valorantImage from '../assets/valorantImage.jpg';
 import leagueImage from '../assets/leagueImage.jpg';
-import TheFinalsImage from '../assets/TheFinals.jpg'
+import TheFinalsImage from '../assets/theFinals.jpg'
 import rainbowImage from '../assets/rainbowImage.jpg'
 import misc from '../assets/misc.jpg'
 import apexImage from '../assets/apexImage.jpg'
