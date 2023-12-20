@@ -13,7 +13,7 @@ function Upload() {
   async function uploadFile(e) {
     const videoFile = e.target.files[0];
 
-    if (!title || !author || category === 'category1') {
+    if (!title || !author || category) {
       alert("Please enter both a title and an author, and select a valid category.");
       return;
     }
