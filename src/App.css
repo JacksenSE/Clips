@@ -62,10 +62,10 @@ body{
   color: #3A401A;
 }
 
-.BattleBitRemasteredCategory:hover {
+.TheFinalsCategory:hover {
   /* Hover styles for the Valorant category */
-  background-color:#1c2125;
-  color: #c8603b;
+  background-color:#d61d3d;
+  color: #edbb3e;
 }
 .CounterStrike2Category:hover {
   /* Hover styles for the Valorant category */
