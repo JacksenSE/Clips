@@ -8,7 +8,7 @@ import Valorant from "./pages/Valorant"
 import Misc from "./pages/Misc"
 import Upload from "./pages/Upload"
 import ApexLegends from "./pages/ApexLegends"
-import TheFinals from './pages/TheFInals'
+import TheFinals from './pages/TheFinals'
 import CounterStrike2 from './pages/CounterStrike2'
 import Rainbow6Siege from './pages/Rainbow6Siege'
 function App() {
@@ -22,7 +22,7 @@ function App() {
     <Route path='/Overwatch' element={<Overwatch/>}/>
     <Route path='/Valorant' element={<Valorant/>}/>
     <Route path='/ApexLegends' element={<ApexLegends/>}/>
-    <Route path='/TheFInals' element={<TheFinals/>}/>
+    <Route path='/TheFinals' element={<TheFinals/>}/>
     <Route path='/CounterStrike2' element={<CounterStrike2/>}/>
     <Route path='/Rainbow6Siege' element={<Rainbow6Siege/>}/>
     <Route path='/Misc' element={<Misc/>}/>
