@@ -8,7 +8,7 @@ import Valorant from "./pages/Valorant"
 import Misc from "./pages/Misc"
 import Upload from "./pages/Upload"
 import ApexLegends from "./pages/ApexLegends"
-import TheFinals from './pages/TheFinals'
+import TheFinals from './pages/TheFInals'
 import CounterStrike2 from './pages/CounterStrike2'
 import Rainbow6Siege from './pages/Rainbow6Siege'
 function App() {

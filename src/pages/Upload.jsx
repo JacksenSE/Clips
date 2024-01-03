@@ -8,7 +8,7 @@ const CDNURL = "https://cfc555.ddns.net/api/videos/";
 function Upload() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState(''); // Default category
+  const [category, setCategory] = useState(''); 
 
   async function uploadFile(e) {
     const videoFile = e.target.files[0];
@@ -20,7 +20,7 @@ function Upload() {
 
     if (videoFile.size > 150 * 1024 * 1024) {
       alert("File size exceeds the maximum allowed (150MB). Please select a smaller file.");
-      return; // Prevent further execution
+      return; 
     }
 
     try {
@@ -37,9 +37,7 @@ function Upload() {
 
       const data = await response.json();
       console.log(data);
-      // Handle successful upload or redirection here
-
-      // Clear the form fields
+    
       setTitle('');
       setAuthor('');
       setCategory('');

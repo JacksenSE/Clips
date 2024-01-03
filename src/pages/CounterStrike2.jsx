@@ -4,17 +4,11 @@ import Nav from '../components/nav';
 function CounterStrike2() {
   const [videos, setVideos] = useState([]);
 
-  useEffect(() => {
-    const previousBackgroundColor = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#e28d2c";
-    return () => {
-      document.body.style.backgroundColor = previousBackgroundColor;
-    };
-  }, []);
+
   
 
   useEffect(() => {
-    // Fetch the video data from the server
+    
     async function fetchVideos() {
       try {
         const response = await fetch('https://cfc555.ddns.net/api/videos');

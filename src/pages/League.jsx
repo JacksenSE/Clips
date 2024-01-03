@@ -4,17 +4,10 @@ import Nav from '../components/nav';
 function League() {
   const [videos, setVideos] = useState([]);
 
-  useEffect(() => {
-    const previousBackgroundColor = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#323c3e";
-    return () => {
-      document.body.style.backgroundColor = previousBackgroundColor;
-    };
-  }, []);
-  
+ 
 
   useEffect(() => {
-    // Fetch the video data from the server
+   
     async function fetchVideos() {
       try {
         const response = await fetch('https://cfc555.ddns.net/api/videos');

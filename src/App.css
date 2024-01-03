@@ -1,83 +1,54 @@
-body{
-  background-color: #302e2c;
-  font-family: 'Oxygen', sans-serif
-
+body {
+  background-image: url('../src/assets/mario.gif'); /* Replace with a cyberpunk-themed background */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Orbitron', sans-serif; /* A futuristic font */
+  color: #fff;
+  margin: 0;
+  overflow-x: hidden; /* Hide horizontal overflow */
+ 
 }
+
 .CatList {
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Adjust the gap between items */
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 20px;
   list-style-type: none;
-  margin-top: 45px; /* Add margin to the top to push the grid down */
+  margin-top: 45px;
   padding: 0;
 }
 
-
 .CatList li {
   text-align: center;
-
 }
 
 .CategoryLink {
   text-decoration: none;
-  color: #000;
-  transition: transform 0.2s; /* Add a smooth transform effect on hover */
+  color: #fff;
+  transition: transform 0.2s;
   display: block;
-  border: 2px solid #ffffff; /* Add a subtle border to each category */
+  border: 2px solid #00ffcc; /* Cyan border for a futuristic feel */
   border-radius: 5px;
-  overflow: hidden; /* Ensure images don't overflow the borders */
+  overflow: hidden;
 }
 
 .CategoryLink:hover {
-  transform: translateY(-5px); /* Move the category up slightly on hover */
+  transform: translateY(-5px);
+  background-color: #004080; /* Darkened background color for contrast */
 }
 
-/* Define a hover effect for the League category */
-.LeagueCategory:hover {
-  /* Add your hover styles here */
-  background-color: #dfc070; /* Example background color */
-  color: #c2c3be; /* Example text color */
-}
-
-/* Repeat the same pattern for other categories as needed */
-.Overwatch2Category:hover {
-  /* Hover styles for the Overwatch category */
-  background-color: #7483ae;
-  color: #FA9C1D;
-}
-
-.ValorantCategory:hover {
-  /* Hover styles for the Valorant category */
-  background-color: #fcbf6f;
-  color: #7c6367;
-}
-.Rainbow6SiegeCategory:hover {
-  /* Hover styles for the Valorant category */
-  background-color:#BFBA9F;
-  color: #8C8581;
-}
-.ApexLegendsCategory:hover {
-  /* Hover styles for the Valorant category */
-  background-color:#A4373D;
-  color: #3A401A;
-}
-
-.TheFinalsCategory:hover {
-  /* Hover styles for the Valorant category */
-  background-color:#d61d3d;
-  color: #edbb3e;
-}
-.CounterStrike2Category:hover {
-  /* Hover styles for the Valorant category */
-  background-color:#e28d2c;
-  color: #402113;
-}
+/* Update category colors to match the cyberpunk theme */
+.LeagueCategory:hover,
+.Overwatch2Category:hover,
+.ValorantCategory:hover,
+.Rainbow6SiegeCategory:hover,
+.ApexLegendsCategory:hover,
+.TheFinalsCategory:hover,
+.CounterStrike2Category:hover,
 .MiscCategory:hover {
-  /* Hover styles for the Valorant category */
-  background-color:#51515d;
-  color: #000000;
+  background-color: #ff0066;
+  color: #00ffcc;
 }
-/* Add hover styles for other categories as needed */
 
 .Category {
   padding: 10px;
@@ -102,43 +73,46 @@ body{
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px;
-  background-color: #ffffff; /* Add a background color to <p> */
-  border-top: 1px solid #e0e0e0; /* Add a subtle border to separate text and image */
+  background-color: #000; /* Dark background color for text contrast */
+  border-top: 1px solid #222; /* Dark border */
 }
 
-
 .Nav {
-  background-color: #333; /* Background color for the navigation bar */
-  color: #fff; /* Text color */
-  padding: 10px 20px; /* Add padding for spacing */
-  position: fixed; /* Fixed position to keep it at the top */
-  top: 0; /* Position at the top of the viewport */
-  left: 0; /* Position at the left edge */
-  right: 0; /* Position at the right edge */
-  z-index: 1000; /* Ensure it's on top of other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  background-color: #222; /* Dark background for the navigation bar */
+  color: #00ffcc; /* Cyan text color */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .NavList {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Use flexbox to horizontally align the navigation items */
-  justify-content: space-between; /* Space items evenly */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .NavList li {
-  margin-right: 20px; /* Add margin between navigation items */
+  margin-right: 20px;
 }
 
 .NavList a {
   text-decoration: none;
-  color: #fff; /* Text color for navigation links */
-  font-weight: bold; /* Bold text */
-  transition: color 0.3s; /* Smooth color transition on hover */
+  color: #00ffcc; /* Cyan text color */
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .NavList a:hover {
-  color: #ffcc00; /* Change text color on hover */
+  color: #ff0066; /* Pinkish-purple color on hover */
+}
+
+* {
+  cursor: url('../src/assets/mush.png'), auto !important;
 }
