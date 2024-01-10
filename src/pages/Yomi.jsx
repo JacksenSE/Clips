@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Nav from '../components/nav';
 
-function Rainbow6Siege() {
+function Yomi() {
   const [videos, setVideos] = useState([]);
 
 
@@ -43,4 +43,4 @@ function Rainbow6Siege() {
   );
 }
 
-export default Rainbow6Siege;
+export default Yomi;

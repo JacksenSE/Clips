@@ -91,7 +91,7 @@ function Upload() {
               <option value="category2">Overwatch</option>
               <option value="category3">Valorant</option>
               <option value="category4">The Finals</option>
-              <option value="category5">Rainbow 6 Siege</option>
+              <option value="category5">YOMI Hustle</option>
               <option value="category6">Apex Legends</option>
               <option value="category7">CounterStrike 2</option>
               <option value="category8">Misc</option>

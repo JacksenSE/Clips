@@ -3,7 +3,7 @@ import overwatchImage from '../assets/overwatchImage.png';
 import valorantImage from '../assets/valorantImage.jpg';
 import leagueImage from '../assets/leagueImage.jpg';
 import TheFinalsImage from '../assets/theFinals.jpg'
-import rainbowImage from '../assets/rainbowImage.jpg'
+import rainbowImage from '../assets/yomiImage.jpg'
 import misc from '../assets/misc.jpg'
 import apexImage from '../assets/apexImage.jpg'
 import counterStrike2Image from '../assets/counterStrike2.jpg'
@@ -39,11 +39,11 @@ function Categories() {
         categoryClass: "TheFinalsCategory",
       },
       {
-        to: "/Rainbow6Siege",
+        to: "/Yomi",
         imageSrc: rainbowImage,
-        alt: "Rainbow 6 Seige",
-        text: "Rainbow 6 Seige",
-        categoryClass: "Rainbow6SiegeCategory",
+        alt: "Your Only Move Is Hustle",
+        text: "Your Only Move Is Hustle",
+        categoryClass: "YomiCategory",
       },
       {
         to: "/ApexLegends",

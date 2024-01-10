@@ -10,7 +10,7 @@ import Upload from "./pages/Upload"
 import ApexLegends from "./pages/ApexLegends"
 import TheFinals from './pages/TheFinals'
 import CounterStrike2 from './pages/CounterStrike2'
-import Rainbow6Siege from './pages/Rainbow6Siege'
+import Yomi from './pages/Yomi'
 function App() {
   
 
@@ -24,7 +24,7 @@ function App() {
     <Route path='/ApexLegends' element={<ApexLegends/>}/>
     <Route path='/TheFinals' element={<TheFinals/>}/>
     <Route path='/CounterStrike2' element={<CounterStrike2/>}/>
-    <Route path='/Rainbow6Siege' element={<Rainbow6Siege/>}/>
+    <Route path='/Yomi' element={<Yomi/>}/>
     <Route path='/Misc' element={<Misc/>}/>
     <Route path='/Upload' element={<Upload/>}/>
     </Routes>
