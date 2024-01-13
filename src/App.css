@@ -1,11 +1,11 @@
 body {
-  background-image: url('../src/assets/mario.gif'); /* Replace with a cyberpunk-themed background */
+  background-image: url('../src/assets/mario.gif'); 
   background-size: cover;
   background-position: center;
-  font-family: 'Orbitron', sans-serif; /* A futuristic font */
+  font-family: 'Orbitron', sans-serif; 
   color: #fff;
   margin: 0;
-  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-x: hidden;
  
 }
 
@@ -27,17 +27,17 @@ body {
   color: #fff;
   transition: transform 0.2s;
   display: block;
-  border: 2px solid #00ffcc; /* Cyan border for a futuristic feel */
+  border: 2px solid #00ffcc; 
   border-radius: 5px;
   overflow: hidden;
 }
 
 .CategoryLink:hover {
   transform: translateY(-5px);
-  background-color: #004080; /* Darkened background color for contrast */
+  background-color: #004080; 
 }
 
-/* Update category colors to match the cyberpunk theme */
+
 .LeagueCategory:hover,
 .Overwatch2Category:hover,
 .ValorantCategory:hover,
@@ -73,13 +73,13 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px;
-  background-color: #000; /* Dark background color for text contrast */
-  border-top: 1px solid #222; /* Dark border */
+  background-color: #000; 
+  border-top: 1px solid #222; 
 }
 
 .Nav {
-  background-color: #222; /* Dark background for the navigation bar */
-  color: #00ffcc; /* Cyan text color */
+  background-color: #222; 
+  color: #00ffcc; 
   padding: 10px 20px;
   position: fixed;
   top: 0;
@@ -104,13 +104,13 @@ body {
 
 .NavList a {
   text-decoration: none;
-  color: #00ffcc; /* Cyan text color */
+  color: #00ffcc; 
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .NavList a:hover {
-  color: #ff0066; /* Pinkish-purple color on hover */
+  color: #ff0066; 
 }
 
 * {

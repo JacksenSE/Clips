@@ -1,10 +1,12 @@
 .Video-Container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-rows: auto;
+  gap: 85px;
   padding: 20px;
   justify-content: center;
   margin-top: 30px;
+ 
 }
 
 .card {
@@ -20,6 +22,7 @@
 }
 
 .card video {
+
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -50,7 +53,7 @@
 }
 
 .overlay-content {
-  z-index: 1; /* Ensure content is above the overlay */
+  z-index: 1; 
   text-align: center;
 }
 
@@ -58,12 +61,12 @@
   z-index: 5;
   font-size: 1.8rem;
   font-weight: bold;
- 
   color: #fff;
   margin-top: 0px;
 }
 
 .card-text {
+  z-index: 5;
   font-size: 1.2rem;
   color: #ffffff;
   padding: 0px;
