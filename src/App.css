@@ -1,6 +1,7 @@
 body {
   background-image: url('../src/assets/ran.gif'); 
-
+  background-size: cover;
+  background-position: center;
   font-family: 'Orbitron', sans-serif; 
 }
 
