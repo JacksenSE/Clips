@@ -5,12 +5,25 @@ import { Link } from 'react-router-dom';
 
 const CDNURL = "https://cfc555.ddns.net/api/videos/";
 
+export const categoryMapping = {
+  category1: 'League',
+  category2: 'Overwatch',
+  category3: 'Valorant',
+  category4: 'The Finals',
+  category5: 'YOMI Hustle',
+  category6: 'Apex Legends',
+  category7: 'CounterStrike 2',
+  category8: 'Misc',
+};
+
 function Upload() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState(''); 
+  const [category, setCategory] = useState('');
 
   async function uploadFile(e) {
+    e.preventDefault(); // Prevents form submission
+
     const videoFile = e.target.files[0];
 
     if (!title || !author || category === '') {
@@ -20,7 +33,7 @@ function Upload() {
 
     if (videoFile.size > 150 * 1024 * 1024) {
       alert("File size exceeds the maximum allowed (150MB). Please select a smaller file.");
-      return; 
+      return;
     }
 
     try {
@@ -37,7 +50,7 @@ function Upload() {
 
       const data = await response.json();
       console.log(data);
-    
+
       setTitle('');
       setAuthor('');
       setCategory('');
@@ -104,9 +117,7 @@ function Upload() {
               Select a Video
             </label>
           </div>
-          <Link to='/'>
-            <button className="submit-button" onClick={(e) => uploadFile(e)}>Upload</button>
-          </Link>
+          <button className="submit-button" onClick={(e) => uploadFile(e)}>Upload</button>
         </Form>
       </Container>
     </>
