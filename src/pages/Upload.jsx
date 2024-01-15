@@ -113,7 +113,7 @@ function Upload() {
           <div className="form-group">
             <label htmlFor="video" className="form-label">Video</label>
             <label className="custom-file-upload">
-              <input type="file" id="video" name="video" accept="video/*" className="form-input" onChange={(e) => uploadFile(e)} />
+            <input type="file" id="video" name="video" accept="video/mp4, video/quicktime" className="form-input" onChange={(e) => uploadFile(e)} />
               Select a Video
             </label>
           </div>
