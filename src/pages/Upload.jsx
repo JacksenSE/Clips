@@ -22,7 +22,7 @@ function Upload() {
   const [category, setCategory] = useState('');
 
   async function uploadFile(e) {
-    e.preventDefault(); // Prevents form submission
+    e.preventDefault();
 
     const videoFile = e.target.files[0];
 
