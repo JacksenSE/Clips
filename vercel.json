@@ -1,9 +1,44 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/api/$1"
-      }
-    ]
-  }
-  
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/$1"
+    },
+    {
+      "source": "/League",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/Overwatch",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/Valorant",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/TheFinals",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/YOMIHustle",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ApexLegends",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/CounterStrike2",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/Misc",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
+}
