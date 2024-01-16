@@ -1,4 +1,12 @@
 
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  background-color: rgb(17, 17, 17);
+}
+
+
 .Nav {
   background-color: #222; 
   color: #00ffcc; 
@@ -51,7 +59,7 @@
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background-color: #000000;
+  background-color: #ffffff;
   text-align: left;
   padding: 30px;
   font-family: 'Arial', sans-serif; 
