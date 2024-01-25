@@ -11,7 +11,7 @@ import ApexLegends from './pages/ApexLegends';
 import TheFinals from './pages/TheFinals';
 import CounterStrike2 from './pages/CounterStrike2';
 import ProfileEdit from './pages/Profile/ProfileEdit';
-import Yomi from './pages/YOMI';
+import Yomi from './pages/yomi';
 import Profile from './pages/Profile/Profile';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
