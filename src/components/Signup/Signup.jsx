@@ -1,6 +1,6 @@
 // Signup.jsx
 import React from 'react';
-import SignupForm from './SignUpForm';
+import SignupForm from './SignupForm';
 
 const Signup = () => {
   const handleSignup = async (signupData) => {
