@@ -16,7 +16,7 @@ import Profile from './pages/Profile/Profile';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import './App.css';
-import './Form.css';
+import './form.css';
 import './profile.css'
 function App() {
   const isAuthenticated = true
