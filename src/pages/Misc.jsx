@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Nav from '../components/nav';
 import { useUser } from '../components/UserContext'; // Import useUser hook
 
-function League() {
+function Misc() {
   const { accessToken } = useUser();
   const isAuthenticated = !!accessToken;
   const [videos, setVideos] = useState([]);
@@ -44,4 +44,4 @@ function League() {
   );
 }
 
-export default League;
+export default Misc;
