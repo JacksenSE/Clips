@@ -37,6 +37,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/profile/:username",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/api/$1"
     }

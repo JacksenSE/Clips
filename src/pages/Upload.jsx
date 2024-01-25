@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const CDNURL = "https://cfc555.ddns.net/api/videos/";
 
 export const categoryMapping = {
-  category1: 'League',
+  category9: 'League',
   category2: 'Overwatch',
   category3: 'Valorant',
   category4: 'The Finals',
@@ -44,9 +44,10 @@ function Upload() {
       formData.append('category', category);
 
       const response = await fetch('https://cfc555.ddns.net/api/videos', {
-        method: 'POST',
-        body: formData,
-      });
+  method: 'POST',
+  body: formData,
+});
+
 
       const data = await response.json();
       console.log(data);
@@ -100,7 +101,7 @@ function Upload() {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
-              <option value="category1">League</option>
+              <option value="category9">League</option>
               <option value="category2">Overwatch</option>
               <option value="category3">Valorant</option>
               <option value="category4">The Finals</option>

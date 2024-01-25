@@ -1,0 +1,137 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; 
+  color: #fff; 
+  font-family: 'Arial', sans-serif;
+}
+
+.profile-container {
+  max-width: 1000px; 
+  margin: 50px auto;
+  padding: 30px;
+  border: 3px solid #4CAF50; 
+  box-shadow: 0 0 20px rgba(75, 192, 192, 0.5);
+  background-color: #333; 
+  border-radius: 15px;
+  
+}
+
+.profile-heading {
+  font-size: 3rem;
+  color: #FFD700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.user-details {
+  margin-top: 30px;
+}
+
+.username {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FF4500; 
+  text-decoration: none;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 5px solid #FFD700; 
+}
+
+.bio {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #A9A9A9; 
+  text-align: center;
+}
+
+
+.user-videos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) ; 
+  grid-template-rows: auto;
+  gap: 85px;
+  padding: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.video-card {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(192, 192, 192, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.video-card:hover {
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: 0 15px 30px rgba(128, 128, 128, 0.9);
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.video-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  z-index: 1;
+  text-align: center;
+}
+
+.video-title {
+  z-index: 5;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4CAF50; /* Green title color */
+  margin-top: 0px;
+}
+
+.video-text {
+  z-index: 5;
+  font-size: 1.3rem;
+  color: #FF4500; /* Orange text color */
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.video-title:hover {
+  color: #FFD700; /* Gold hover color */
+}
+
+.video-text:hover {
+  color: #A9A9A9; /* Dark gray hover color */
+}

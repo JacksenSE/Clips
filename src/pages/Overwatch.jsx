@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import Nav from '../components/nav';
+import { useUser } from '../components/UserContext'; // Import useUser hook
 
-function Overwatch() {
+function League() {
+  const { accessToken } = useUser();
+  const isAuthenticated = !!accessToken;
   const [videos, setVideos] = useState([]);
 
- 
-
   useEffect(() => {
-   
     async function fetchVideos() {
       try {
         const response = await fetch('https://cfc555.ddns.net/api/videos');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
         setVideos(data);
       } catch (error) {
-        console.log(error);
-        alert("Error retrieving videos");
+        console.error(error);
+        alert('Error retrieving videos');
       }
     }
 
     fetchVideos();
   }, []);
 
-  const filteredVideos = videos.filter(video => video.category === 'category2');
+  const filteredVideos = videos.filter((video) => video.category === 'category2');
 
   return (
     <>
-      <Nav />
-
-     
+      <Nav isAuthenticated={isAuthenticated} /> 
 
       <div className="Video-Container">
         {filteredVideos.map((video) => (
@@ -43,4 +44,4 @@ function Overwatch() {
   );
 }
 
-export default Overwatch;
+export default League;
