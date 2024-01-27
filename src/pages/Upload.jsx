@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import Nav from '../components/nav';
 import { Link } from 'react-router-dom';
-
+import { useUser } from '../components/UserContext';
 const CDNURL = "https://cfc555.ddns.net/api/videos/";
 
 export const categoryMapping = {
@@ -20,7 +20,8 @@ function Upload() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
-
+  const { accessToken } = useUser();
+  const isAuthenticated = !!accessToken;
   async function uploadFile(e) {
     e.preventDefault();
 
@@ -63,7 +64,7 @@ function Upload() {
 
   return (
     <>
-      <Nav />
+      <Nav isAuthenticated={isAuthenticated} /> 
 
       <Container className='mt-5 upload-container' style={{ backgroundColor: "gray" }}>
         <h1 className='Video-Title'>Video Upload</h1>
