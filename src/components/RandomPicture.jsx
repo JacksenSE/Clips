@@ -3,12 +3,18 @@ import React from "react";
 
 const RandomPicture = () => {
   const randomPictures = [
-    'https://images.unsplash.com/photo-1546445317-29f4545e9d53?q=80&w=2004&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1543507804-4a4fdc216be8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1578051696754-4652a8f67882?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1671664530497-167b6b69bafc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    
+    'https://media1.tenor.com/m/izKH0rZqv-IAAAAd/bardmp4-bard.gif',
+    'https://media1.tenor.com/m/3saaHIv3zBgAAAAd/aatrox-league-of-legends.gif',
+    'https://media1.tenor.com/m/f-_ko3SD2IAAAAAC/omen-valorant.gif',
+    'https://media1.tenor.com/m/imCqsaxJQlMAAAAC/kaisa.gif',
+    'https://media1.tenor.com/m/KyuAgnD3t1QAAAAC/valorant-cypher.gif',
+    'https://media1.tenor.com/m/Gb4ftr4F3qoAAAAC/squint-my-eyes-reyna.gif',
+    'https://media1.tenor.com/m/tb1Mk1o8I10AAAAC/jett-jett-valorant.gif',
+    'https://media1.tenor.com/m/wrM9BKU3rsoAAAAd/bateatbanan-banana.gif',
+    'https://media1.tenor.com/m/9Eyt1T8mGyoAAAAd/star-guardian-morgana-morgana.gif',
+    'https://media1.tenor.com/m/YTiWpm8Wl9sAAAAC/overwatch-winston.gif',
+    'https://media1.tenor.com/m/ZF7-tlrGKNYAAAAd/over-watch-reinhardt.gif',
+    'https://cdn.discordapp.com/attachments/872737893452509246/1199198388185468958/IMG_4739.jpg?ex=65c1ab87&is=65af3687&hm=1a061b9771f318864b88ecb97f52526291386cd76d63a37719dab59a069c1301&',
   ];
 
   // Get a random picture URL
