@@ -1,63 +1,50 @@
-// nav.jsx
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useUser } from '../components/UserContext';
 import { BsUpload } from 'react-icons/bs';
 import { FaHome } from 'react-icons/fa';
-import { useUser } from '../components/UserContext';
+function Nav({ onLogout }) {
+  const { userId, userData, updateUser } = useUser(); 
+  const [isLoading, setIsLoading] = useState(false);
+ 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        if (!isLoading && userId && !userData) { 
+          setIsLoading(true); 
+          const response = await fetch(`https://cfc555.ddns.net/api/login/${userId}`, {
+            headers: {
+              Authorization: `Bearer ${userId}`,
+              'Content-Type': 'application/json',
+            },
+          });
 
-
-const getUser = async (username) => {
-  try {
-    if (username) {
-      const response = await fetch(`https://cfc555.ddns.net/api/login/`, {
-        headers: {
-          Authorization: `Bearer ${username}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (response.ok) {
-        const userData = await response.json();
-
-        return userData;
-      } else {
-        console.error(`Failed to fetch user data with status ${response.status}`);
-        return null;
+          if (response.ok) {
+            const userData = await response.json();
+            updateUser(userData);
+          } else {
+            console.error(`Failed to fetch user data with status ${response.status}`);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      } finally {
+        setIsLoading(false); 
       }
-    }
-  } catch (error) {
-    console.error('Error fetching user data:', error);
-    return null;
-  }
-};
+    };
 
-function Nav({ isAuthenticated, onLogout }) {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { username, updateUser, logout } = useUser();
+    fetchUserData();
+  }, [userId, userData, updateUser, isLoading]);
 
-  const isProfileRoute =
-    location.pathname.startsWith('/profile') ||
-    location.pathname === '/League' ||
-    location.pathname === '/Overwatch' ||
-    location.pathname === '/Valorant' ||
-    location.pathname === '/TheFinals' ||
-    location.pathname === '/Yomi' ||
-    location.pathname === '/ApexLegends' ||
-    location.pathname === '/CounterStrike2' ||
-    location.pathname === '/Misc' ||
-    location.pathname === '/Upload' ||
-    location.pathname === '/';
 
-  const profileLink =
-    isAuthenticated && isProfileRoute ? (
-      <li>
-        <Link to={`/profile/${username || 'wwwwww'}`} className="Profile">
-          Profile
-        </Link>
-      </li>
-    ) : null;
-  
+  const profileLink = userData ? (
+    <li>
+      <Link to={`/profile/${userId}`} className="Profile">
+        {userData.username} Profile
+      </Link>
+    </li>
+  ) : null;
+
   return (
     <div className="Nav">
       <ul className="NavList">
@@ -66,6 +53,7 @@ function Nav({ isAuthenticated, onLogout }) {
             <FaHome />
           </Link>
         </li>
+        
         <li>
           <Link to="/League" className="League">
             League
@@ -108,34 +96,33 @@ function Nav({ isAuthenticated, onLogout }) {
         </li>
         {profileLink}
         <li>
-          {isAuthenticated ? (
-            <Link to="/Upload" className="Upload">
-              <BsUpload />
-            </Link>
-          ) : null}
+          <Link to="/Upload" className="Upload">
+            <BsUpload />
+          </Link>
         </li>
-
-        {isAuthenticated ? (
+        {userData ? (
           <li>
-            <button onClick={onLogout} className='LogoutButton'>Logout</button>
+            <button onClick={onLogout} className="LogoutButton">
+              Logout
+            </button>
           </li>
         ) : (
           <>
-  <li>
-    <Link to="/login" className="LoginLink">
-      Login
-    </Link>
-  </li>
-  <li>
-    <Link to="/signup" className="SignupLink">
-      Signup
-    </Link>
-  </li>
-</>
+            <li>
+              <Link to="/login" className="LoginLink">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link to="/signup" className="SignupLink">
+                Signup
+              </Link>
+            </li>
+          </>
         )}
       </ul>
     </div>
   );
-}
+  }
 
 export default Nav;

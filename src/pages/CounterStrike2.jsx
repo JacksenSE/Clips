@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Nav from '../components/nav';
-import { useUser } from '../components/UserContext'; // Import useUser hook
+import { useUser } from '../components/UserContext'; 
 
 function CounterStrike2() {
   const { accessToken } = useUser();

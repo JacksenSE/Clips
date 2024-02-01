@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter
 import Nav from './components/nav';
 import Home from './components/Home';
 import League from './pages/League';
@@ -19,25 +19,12 @@ import './form.css';
 import './profile.css';
 
 function App() {
-  const isAuthenticated = useState(false);
+  const [isAuthenticated, setAuthenticated] = useState(false);
   const [loadingProfile, setLoadingProfile] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
 
-  const handleLogin = async (loginData) => {
-    try {
-      setAuthenticated(true);
-      setAccessToken(loginData.token);
-
-      const username = loginData.username;
-
-      navigate(`/profile/${username}`);
-    } catch (error) {
-      console.error('Error during login:', error);
-    }
-  };
-
   return (
-    <Router>
+    <Router> 
       <Nav isAuthenticated={isAuthenticated} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -46,12 +33,12 @@ function App() {
         <Route path="/Valorant" element={<Valorant />} />
         <Route path="/ApexLegends" element={<ApexLegends />} />
         <Route path="/TheFinals" element={<TheFinals />} />
-        <Route path="/profile/:username" element={<Profile isAuthenticated={isAuthenticated} accessToken={accessToken} setLoading={setLoadingProfile} />} />
+        <Route path="/profile/:userId" element={<Profile isAuthenticated={isAuthenticated} accessToken={accessToken} setLoading={setLoadingProfile} />} />
         <Route path="/CounterStrike2" element={<CounterStrike2 />} />
         <Route path="/Yomi" element={<Yomi />} />
         <Route path="/Misc" element={<Misc />} />
         <Route path="/Upload" element={<Upload />} />
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>

@@ -1,4 +1,4 @@
-// LoginForm.jsx
+
 import React, { useState } from 'react';
 
 const LoginForm = ({ onLogin, loading, onSubmit, loginIdentifier, setLoginIdentifier, loginPassword, setLoginPassword }) => {
@@ -22,7 +22,7 @@ const LoginForm = ({ onLogin, loading, onSubmit, loginIdentifier, setLoginIdenti
       const data = await response.json();
       console.log('Login successful:', data);
 
-      // Pass the token to the parent component
+    
       onLogin(data.token);
     } catch (error) {
       console.error('Error during login:', error);
@@ -37,7 +37,7 @@ const LoginForm = ({ onLogin, loading, onSubmit, loginIdentifier, setLoginIdenti
         value={loginIdentifier}
         onChange={(e) => setLoginIdentifier(e.target.value)}
         required
-        disabled={loading} // Disable input during loading
+        disabled={loading} 
       />
       <label>Password:</label>
       <input
@@ -45,7 +45,7 @@ const LoginForm = ({ onLogin, loading, onSubmit, loginIdentifier, setLoginIdenti
         value={loginPassword}
         onChange={(e) => setLoginPassword(e.target.value)}
         required
-        disabled={loading} // Disable input during loading
+        disabled={loading} 
       />
       <button type="submit" disabled={loading}>
         {loading ? 'Logging in...' : 'Login'}

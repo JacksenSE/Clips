@@ -1,4 +1,4 @@
-// SignupForm.jsx
+
 import React, { useState } from 'react';
 
 const SignupForm = ({ onSignup }) => {
@@ -8,7 +8,7 @@ const SignupForm = ({ onSignup }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Pass signup data to parent component
+    
     onSignup({
       email: registerEmail,
       username: registerUsername,

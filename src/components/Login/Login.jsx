@@ -1,5 +1,3 @@
-// Login.jsx
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../components/UserContext';
@@ -8,33 +6,31 @@ const Login = () => {
   const [loginIdentifier, setLoginIdentifier] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const { updateUser } = useUser();
+  const { updateUser, setUserId } = useUser();
   const navigate = useNavigate();
 
   const handleLogin = async (token) => {
     try {
       updateUser(token);
       console.log('Login successful:', token);
-
+  
+      
       const userDataArray = await fetchUserData(token);
-
+  
       if (!userDataArray) {
-        // Handle the case when user data retrieval fails
+       
         setLoading(false);
         return;
       }
-
-      // Find the user whose email matches the loginIdentifier
+  
       const loggedInUser = userDataArray.find((user) => user.email === loginIdentifier);
+      
+      
+      const userId = loggedInUser.id;
+      setUserId(userId);
+      localStorage.setItem('userId', userId);
 
-      if (!loggedInUser) {
-        console.error('Logged-in user not found in the response');
-        setLoading(false);
-        return;
-      }
-
-      const username = loggedInUser.username;
-      navigate(`/profile/${username}`);
+      navigate(`/profile/${userId}`); 
     } catch (error) {
       console.error('Error during login:', error);
       setLoading(false);
@@ -123,7 +119,6 @@ const Login = () => {
       </form>
     </div>
   );
-  
 };
 
 export default Login;

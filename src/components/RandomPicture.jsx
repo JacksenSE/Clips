@@ -1,5 +1,4 @@
-// RandomPicture.jsx
-import React from "react";
+
 
 const RandomPicture = () => {
   const randomPictures = [
@@ -17,7 +16,7 @@ const RandomPicture = () => {
     'https://cdn.discordapp.com/attachments/872737893452509246/1199198388185468958/IMG_4739.jpg?ex=65c1ab87&is=65af3687&hm=1a061b9771f318864b88ecb97f52526291386cd76d63a37719dab59a069c1301&',
   ];
 
-  // Get a random picture URL
+  
   const randomIndex = Math.floor(Math.random() * randomPictures.length);
   return randomPictures[randomIndex];
 };
