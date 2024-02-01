@@ -153,19 +153,19 @@ const Profile = () => {
           {isEditMode ? (
             <>
             <h4 className='Username-Header'>Username</h4>
-              <input
+              <input className='username-box'
                 type="text"
                 name="username"
                 value={updatedProfileData.username}
                 onChange={handleChange}
               />
               <h4 className='Bio-Header'>Bio</h4>
-              <textarea
+              <textarea className='bio-box'
                 name="bio"
                 value={updatedProfileData.bio}
                 onChange={handleChange}
               ></textarea>
-              <button onClick={handleUpdateProfile}>Save Profile</button>
+              <button onClick={handleUpdateProfile} className='save-profile-button'>Save Profile</button>
             </>
           ) : (
             <>
@@ -176,7 +176,7 @@ const Profile = () => {
                 alt="Profile Picture"
               />
               {user.bio && <p className="bio">{user.bio}</p>}
-              <button onClick={handleEditProfileClick}>Edit Profile</button>
+              <button onClick={handleEditProfileClick} className='edit-button'>Edit Profile</button>
             </>
           )}
         </div>

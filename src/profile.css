@@ -116,23 +116,81 @@ body {
   z-index: 5;
   font-size: 2rem;
   font-weight: bold;
-  color: #4CAF50; /* Green title color */
+  color: #4CAF50; 
   margin-top: 0px;
 }
 
 .video-text {
   z-index: 5;
   font-size: 1.3rem;
-  color: #FF4500; /* Orange text color */
+  color: #FF4500;
   padding: 10px;
   border-radius: 15px;
   margin-top: 10px;
 }
 
 .video-title:hover {
-  color: #FFD700; /* Gold hover color */
+  color: #FFD700; /
 }
 
 .video-text:hover {
-  color: #A9A9A9; /* Dark gray hover color */
+  color: #A9A9A9;
+}
+.video-details {
+  padding: 10px;
+}
+
+.edit-button {
+  background-color: #FFD700; 
+  color: #333; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px;
+  font-size: 1.2rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+.edit-button:hover {
+  background-color: #FFA500; 
+}
+
+.save-profile-button {
+  background-color: #4CAF50; 
+  color: #fff;
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  font-size: 1.2rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; 
+  margin-top: 20px; 
+}
+
+
+.save-profile-button:hover {
+  background-color: #45a049; 
+}
+
+.bio-box {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  background-color: #474747;
+  border: 2px solid #FFD700; 
+  border-radius: 5px; 
+  font-size: 1rem; 
+  margin-top: 10px; 
+}
+
+
+.username-box {
+  width: 100%; 
+  padding: 10px; 
+  border: 2px solid #FFD700; 
+  background-color: #474747;
+  border-radius: 5px; 
+  font-size: 1rem; 
+  margin-top: 10px; 
 }
