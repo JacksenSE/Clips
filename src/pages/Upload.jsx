@@ -66,7 +66,7 @@ function Upload() {
     <>
       <Nav isAuthenticated={isAuthenticated} /> 
 
-      <Container className='mt-5 upload-container' style={{ backgroundColor: "gray" }}>
+      <Container className='mt-5 upload-container' style={{ backgroundColor: '#222' }}>
         <h1 className='Video-Title'>Video Upload</h1>
         <Form className="upload-form">
           <div className="form-group">
