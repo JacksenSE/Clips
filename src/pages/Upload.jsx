@@ -102,6 +102,7 @@ function Upload() {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
+              <option >Please Choose A Category</option>
               <option value="category9">League</option>
               <option value="category2">Overwatch</option>
               <option value="category3">Valorant</option>
