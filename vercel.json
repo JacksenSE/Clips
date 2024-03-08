@@ -41,6 +41,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/api/$1"
     }
