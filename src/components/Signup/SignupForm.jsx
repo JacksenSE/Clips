@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const SignupForm = ({ onSignup }) => {
   const [registerEmail, setRegisterEmail] = useState('');
@@ -8,12 +8,16 @@ const SignupForm = ({ onSignup }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     onSignup({
       email: registerEmail,
       username: registerUsername,
       password: registerPassword,
     });
+
+    // Optionally, you can navigate to another route here
+    // For example, redirecting to the login page after signup
+    // history.push('/login');
   };
 
   return (
@@ -42,9 +46,9 @@ const SignupForm = ({ onSignup }) => {
         onChange={(e) => setRegisterPassword(e.target.value)}
         required
       />
-      <button className="signup-button" type="submit">
+      <Link to="/login" className="signup-button">
         Sign Up
-      </button>
+      </Link>
     </form>
   );
 };

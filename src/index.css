@@ -5,8 +5,7 @@
   gap: 85px;
   padding: 20px;
   justify-content: center;
-  margin-top: 30px;
- 
+  margin-top: 50px;
 }
 
 .card {
@@ -80,9 +79,9 @@
 .LogoutButton {
   background-color: #d9534f;
   color: white;
-  padding: 3px 20px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
 }
 

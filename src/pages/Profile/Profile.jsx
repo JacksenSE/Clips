@@ -191,7 +191,7 @@ const Profile = () => {
               ></video>
               {video.title && <h3 className="video-title">{video.title}</h3>}
               {video.author && <p className="video-author">{video.author}</p>}
-              <button onClick={() => handleDeleteVideo(video.filename)}>
+              <button onClick={() => handleDeleteVideo(video.filename)} className='video-Delete-Button'>
                 <FaTrashAlt />
               </button>
             </div>

@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   padding: 0;
@@ -9,15 +7,13 @@ body {
 }
 
 .profile-container {
-  display: block !important; 
-  max-width: 1000px; 
+  max-width: 1500px; 
   margin: 50px auto;
-  padding: 30px;
-  border: 3px solid #4CAF50; 
-  box-shadow: 0 0 20px rgba(75, 192, 192, 0.5);
+  padding: 30px; 
+  border: 3px solid #FFD700; 
+  box-shadow: 0 0 90px rgba(75, 192, 192, 0.5);
   background-color: #333; 
   border-radius: 15px;
-  
 }
 
 .profile-heading {
@@ -26,6 +22,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
 .user-details {
@@ -37,6 +34,9 @@ body {
   font-weight: bold;
   color: #FF4500; 
   text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .profile-picture {
@@ -44,64 +44,40 @@ body {
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  margin-top: 20px;
+  margin: 0 auto 20px;
+  display: block;
   border: 5px solid #FFD700; 
 }
 
 .bio {
-  margin-top: 30px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #A9A9A9; 
   text-align: center;
+  margin-bottom: 30px;
 }
 
-
-.user-videos-container {
+.user-videos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) ; 
-  grid-template-rows: auto;
-  gap: 85px;
-  padding: 20px;
-  justify-content: center;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 50px;
+
 }
 
 .video-card {
   position: relative;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(192, 192, 192, 0.7);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-bottom: 20px;
+  height: 300px; /* Adjust height as needed */
 }
 
-.video-card:hover {
-  transform: rotate(-5deg) scale(1.05);
-  box-shadow: 0 15px 30px rgba(128, 128, 128, 0.9);
-}
 
 .video-card video {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 40px); /* Adjust height to accommodate overlay */
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 30px;
   transition: transform 0.3s ease-in-out;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
+
 
 .video-card:hover .overlay {
   opacity: 1;
@@ -113,84 +89,83 @@ body {
 }
 
 .video-title {
-  z-index: 5;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Adjust font size */
   font-weight: bold;
-  color: #4CAF50; 
-  margin-top: 0px;
+  color: #FFD700; 
+  margin: 0;
 }
 
 .video-text {
-  z-index: 5;
-  font-size: 1.3rem;
+  font-size: 1rem; /* Adjust font size */
   color: #FF4500;
-  padding: 10px;
-  border-radius: 15px;
-  margin-top: 10px;
+  margin: 0;
 }
 
+
 .video-title:hover {
-  color: #FFD700; /
+  color: #FFD700;
 }
 
 .video-text:hover {
   color: #A9A9A9;
 }
+
 .video-details {
   padding: 10px;
 }
+.video-Delete-Button {
+  position: relative;
+  bottom: 50px;
+  background-color: #FFD700; 
+  color: #333; 
+  border: none; 
+  padding: 5px 10px; 
+  border-radius: 5px;
+  font-size: 1.2rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: block;
+  margin: 10px auto; /* Adjust margin as needed */
+ 
+}
 
-.edit-button {
+.video-Delete-Button:hover {
+  background-color: #FFA500; 
+}
+
+.edit-button,
+.save-profile-button,
+.delete-button {
   background-color: #FFD700; 
   color: #333; 
   border: none; 
   padding: 10px 20px; 
   border-radius: 5px;
   font-size: 1.2rem; 
+  font-weight: bolder;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  display: block;
+  margin: 10px auto; /* Adjust margin as needed */
+  width: fit-content; /* Ensures the button only takes up as much space as needed */
 }
 
-
-.edit-button:hover {
+.edit-button:hover,
+.save-profile-button:hover,
+.delete-button:hover {
   background-color: #FFA500; 
 }
 
-.save-profile-button {
-  background-color: #4CAF50; 
-  color: #fff;
-  border: none; 
-  padding: 10px 20px; 
-  border-radius: 5px; 
-  font-size: 1.2rem; 
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out; 
-  margin-top: 20px; 
-}
 
-
-.save-profile-button:hover {
-  background-color: #45a049; 
-}
-
-.bio-box {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  background-color: #474747;
-  border: 2px solid #FFD700; 
-  border-radius: 5px; 
-  font-size: 1rem; 
-  margin-top: 10px; 
-}
-
-
+.bio-box,
 .username-box {
-  width: 100%; 
+  width: calc(100% - 20px); 
   padding: 10px; 
   border: 2px solid #FFD700; 
   background-color: #474747;
   border-radius: 5px; 
   font-size: 1rem; 
-  margin-top: 10px; 
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
 }

@@ -13,7 +13,7 @@ const RandomPicture = () => {
     'https://media1.tenor.com/m/9Eyt1T8mGyoAAAAd/star-guardian-morgana-morgana.gif',
     'https://media1.tenor.com/m/YTiWpm8Wl9sAAAAC/overwatch-winston.gif',
     'https://media1.tenor.com/m/ZF7-tlrGKNYAAAAd/over-watch-reinhardt.gif',
-    'https://cdn.discordapp.com/attachments/872737893452509246/1199198388185468958/IMG_4739.jpg?ex=65c1ab87&is=65af3687&hm=1a061b9771f318864b88ecb97f52526291386cd76d63a37719dab59a069c1301&',
+   
   ];
 
   
