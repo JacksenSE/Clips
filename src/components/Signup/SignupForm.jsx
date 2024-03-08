@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 const SignupForm = ({ onSignup }) => {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerUsername, setRegisterUsername] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
-  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,8 +14,8 @@ const SignupForm = ({ onSignup }) => {
       password: registerPassword,
     });
 
-
-    history.push('/login');
+    // Redirect to the login page after signup
+    window.location.href = '/login';
   };
 
   return (
