@@ -14,6 +14,7 @@ import Yomi from './pages/Yomi';
 import Profile from './pages/Profile/Profile';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
+import Mobile from './components/Mobile';
 import './App.css';
 import './form.css';
 import './profile.css';
@@ -26,6 +27,7 @@ function App() {
   return (
     <Router> 
       <Nav isAuthenticated={isAuthenticated} />
+      <Mobile isAuthenticated={isAuthenticated}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/League" element={<League />} />
@@ -40,6 +42,7 @@ function App() {
         <Route path="/Upload" element={<Upload />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+      
       </Routes>
     </Router>
   );
