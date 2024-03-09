@@ -33,7 +33,7 @@ function App() {
         <Route path="/Valorant" element={<Valorant />} />
         <Route path="/ApexLegends" element={<ApexLegends />} />
         <Route path="/TheFinals" element={<TheFinals />} />
-        <Route path="/profile/:userId" element={<Profile isAuthenticated={isAuthenticated} accessToken={accessToken} setLoading={setLoadingProfile} />} />
+        <Route path="/profile/:username" element={<Profile isAuthenticated={isAuthenticated} accessToken={accessToken} setLoading={setLoadingProfile} />} />
         <Route path="/CounterStrike2" element={<CounterStrike2 />} />
         <Route path="/Yomi" element={<Yomi />} />
         <Route path="/Misc" element={<Misc />} />

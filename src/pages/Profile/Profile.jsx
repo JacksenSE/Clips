@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { useUser } from '../../components/UserContext';
 import { FaTrashAlt } from 'react-icons/fa';
 import RandomPicture from '../../components/RandomPicture';
-
+import { useParams } from 'react-router-dom';
 const Profile = () => {
   const [user, setUser] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [updatedProfileData, setUpdatedProfileData] = useState({});
-  const { accessToken, userId } = useUser(); // Get userId from useUser
+  const { accessToken } = useUser(); 
   const [videos, setVideos] = useState([]);
   const randomProfilePicture = RandomPicture();
+  const { username } = useParams(); 
 
-  const fetchUserData = async (token, userId) => {
+
+
+  const fetchUserData = async (token, username) => {
     try {
-      const response = await fetch(`https://cfc555.ddns.net/api/login/${userId}`, {
+      const response = await fetch(`https://cfc555.ddns.net/api/login/${username}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -39,20 +42,20 @@ const Profile = () => {
       try {
         if (!accessToken) {
           console.error('Unauthorized access. Redirecting to login page.');
-          // Handle unauthorized access
+         
           return;
         }
 
-        // Fetch user data using the saved userId
-        const userData = await fetchUserData(accessToken, userId);
-        setUser(userData); // Update the user state here
+     
+        const userData = await fetchUserData(accessToken, username);
+        setUser(userData); 
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
 
-    fetchData(); // Call the fetchData function
-  }, [accessToken, userId]);
+    fetchData(); 
+  }, [accessToken, username]);
 
   const fetchVideos = async () => {
     try {
@@ -100,38 +103,37 @@ const Profile = () => {
 
   const handleEditProfileClick = () => {
     setIsEditMode(true);
-    // Initialize updated profile data with current user data
+   
     setUpdatedProfileData({
       username: user.username,
-      bio: user.bio || '', // Ensure bio is initialized even if it's not present in the user object
+      bio: user.bio || '', 
     });
   };
 
   const handleUpdateProfile = async () => {
-    console.log('Updating profile with data:', updatedProfileData);
+  console.log('Updating profile with data:', updatedProfileData);
 
-    try {
-      const response = await fetch(`https://cfc555.ddns.net/api/login/${userId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify(updatedProfileData),
-      });
+  try {
+    const response = await fetch(`https://cfc555.ddns.net/api/login/${username}`, { 
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(updatedProfileData),
+    });
 
-      if (response.ok) {
-        console.log('Profile updated successfully');
-        fetchUserData(accessToken, userId); // Fetch updated user data
-        setIsEditMode(false); // Exit edit mode
-      } else {
-        console.error(`Failed to update profile with status ${response.status}`);
-      }
-    } catch (error) {
-      console.error('Error updating profile:', error);
+    if (response.ok) {
+      console.log('Profile updated successfully');
+      fetchUserData(accessToken, username);
+      setIsEditMode(false); 
+    } else {
+      console.error(`Failed to update profile with status ${response.status}`);
     }
-  };
-
+  } catch (error) {
+    console.error('Error updating profile:', error);
+  }
+};
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUpdatedProfileData((prevData) => ({
@@ -143,6 +145,11 @@ const Profile = () => {
   if (!user) {
     return <p>Loading...</p>;
   }
+
+  const handleSaveAndRefresh = async () => {
+    await handleUpdateProfile(); 
+    window.location.reload();
+  };
 
   const userVideos = videos.filter((video) => user && video.author === user.username);
 
@@ -165,7 +172,7 @@ const Profile = () => {
                 value={updatedProfileData.bio}
                 onChange={handleChange}
               ></textarea>
-              <button onClick={handleUpdateProfile} className='save-profile-button'>Save Profile</button>
+              <button onClick={handleSaveAndRefresh} className='save-profile-button'>Save Profile</button>
             </>
           ) : (
             <>

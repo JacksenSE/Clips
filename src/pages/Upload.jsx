@@ -32,11 +32,11 @@ function Upload() {
       return;
     }
 
-    if (videoFile.size > 150 * 1024 * 1024) {
-      alert("File size exceeds the maximum allowed (150MB). Please select a smaller file.");
+    if (videoFile.size > 500 * 1024 * 1024) {
+      alert("File size exceeds the maximum allowed (500MB). Please select a smaller file.");
       return;
     }
-
+    
     try {
       const formData = new FormData();
       formData.append('video', videoFile);
