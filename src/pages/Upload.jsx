@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Container, Form, ProgressBar } from 'react-bootstrap';
 import Nav from '../components/nav';
-import { Link } from 'react-router-dom';
 import { useUser } from '../components/UserContext';
+
 const CDNURL = "https://cfc555.ddns.net/api/videos/";
 
 export const categoryMapping = {
@@ -20,23 +20,31 @@ function Upload() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [uploadStatus, setUploadStatus] = useState('');
   const { accessToken } = useUser();
   const isAuthenticated = !!accessToken;
+
   async function uploadFile(e) {
     e.preventDefault();
 
     const videoFile = e.target.files[0];
 
     if (!title || !author || category === '') {
-      alert("Please enter both a title and an author, and select a valid category.");
+      setUploadStatus("Please enter both a title and an author, and select a valid category.");
+      return;
+    }
+
+    if (!videoFile) {
+      setUploadStatus("Please select a video to upload.");
       return;
     }
 
     if (videoFile.size > 500 * 1024 * 1024) {
-      alert("File size exceeds the maximum allowed (500MB). Please select a smaller file.");
+      setUploadStatus("File size exceeds the maximum allowed (500MB). Please select a smaller file.");
       return;
     }
-    
+
     try {
       const formData = new FormData();
       formData.append('video', videoFile);
@@ -45,10 +53,20 @@ function Upload() {
       formData.append('category', category);
 
       const response = await fetch('https://cfc555.ddns.net/api/videos', {
-  method: 'POST',
-  body: formData,
-});
+        method: 'POST',
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+        onUploadProgress: progressEvent => {
+          const progress = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+          setUploadProgress(progress);
+        }
+      });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
 
       const data = await response.json();
       console.log(data);
@@ -56,9 +74,11 @@ function Upload() {
       setTitle('');
       setAuthor('');
       setCategory('');
+      setUploadProgress(0);
+      setUploadStatus("Video uploaded successfully!");
     } catch (error) {
       console.error(error);
-      alert("Error uploading file to PostgreSQL");
+      setUploadStatus("Error uploading file to server");
     }
   }
 
@@ -103,24 +123,20 @@ function Upload() {
               onChange={(e) => setCategory(e.target.value)}
             >
               <option >Please Choose A Category</option>
-              <option value="category9">League</option>
-              <option value="category2">Overwatch</option>
-              <option value="category3">Valorant</option>
-              <option value="category4">The Finals</option>
-              <option value="category5">YOMI Hustle</option>
-              <option value="category6">Apex Legends</option>
-              <option value="category7">CounterStrike 2</option>
-              <option value="category8">Misc</option>
+              {Object.entries(categoryMapping).map(([key, value]) => (
+                <option key={key} value={key}>{value}</option>
+              ))}
             </select>
           </div>
           <div className="form-group">
             <label htmlFor="video" className="form-label">Video</label>
             <label className="custom-file-upload">
-            <input type="file" id="video" name="video" accept="video/mp4, video/quicktime" className="form-input" onChange={(e) => uploadFile(e)} />
-              Select a Video
+              <input type="file" id="video" name="video" accept="video/mp4, video/quicktime" className="form-input" onChange={(e) => uploadFile(e)} />
+              Select & Upload Video
             </label>
           </div>
-          <button className="submit-button" onClick={(e) => uploadFile(e)}>Upload</button>
+          {uploadProgress > 0 && <ProgressBar now={uploadProgress} label={`${uploadProgress}%`} />}
+          {uploadStatus && <p>{uploadStatus}</p>}
         </Form>
       </Container>
     </>
